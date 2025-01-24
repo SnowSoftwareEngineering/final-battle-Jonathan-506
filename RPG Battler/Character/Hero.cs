@@ -31,7 +31,7 @@ namespace RPG_Battler.Character
         public void LevelUp()
         {
             Random random = new Random();
-            
+
 
             switch (CombatClass)
             {
@@ -62,48 +62,48 @@ namespace RPG_Battler.Character
         {
             if (showWithEquipment)
             {
-                Console.WriteLine(Name);
-                Console.WriteLine(Level);
-                Console.WriteLine(TotalHealth);
-                Console.WriteLine(TotalPower);
-                Console.WriteLine(TotalLuck);
+                Console.WriteLine($"Name: {Name}");
+                Console.WriteLine($"Level: {Level}");
+                Console.WriteLine($"Health: {TotalHealth}");
+                Console.WriteLine($"Power: {TotalPower}");
+                Console.WriteLine($"Luck: {TotalLuck}");
 
             }
             else
             {
-                Console.WriteLine(Name);
-                Console.WriteLine(Level);
-                Console.WriteLine(Health);
-                Console.WriteLine(Power);
-                Console.WriteLine(Luck);
+                Console.WriteLine($"Name: {Name}");
+                Console.WriteLine($"Level: {Level}");
+                Console.WriteLine($"Health:{Health}");
+                Console.WriteLine($"Power: {Power}");
+                Console.WriteLine($"Luck: {Luck}");
             }
 
         }
-        public void PowerLevel( int heroLevel)
+        public void PowerLevel(int heroLevel)
         {
             for (int i = 0; i < heroLevel; i++)
             {
                 LevelUp();
             }
-
-
         }
-        public void AwakenHero(){
+        public void AwakenHero()
+        {
             Random random = new Random();
             int number = random.Next(1, 4);
-            switch (number){
+            switch (number)
+            {
                 case (int)CombatClass.Warrior:
                     CombatClass = CombatClass.Warrior;
-                break;
+                    break;
                 case (int)CombatClass.Wizard:
-                CombatClass = CombatClass.Wizard;
-                break;
+                    CombatClass = CombatClass.Wizard;
+                    break;
                 case (int)CombatClass.Rogue:
-                CombatClass = CombatClass.Rogue;
-                break;
+                    CombatClass = CombatClass.Rogue;
+                    break;
             }
-            int heroLevel = random.Next(8,13);
-            PowerLevel(heroLevel);
+            Level = random.Next(8, 13);
+            PowerLevel(Level);
         }
 
         public void CalculateTotals()
