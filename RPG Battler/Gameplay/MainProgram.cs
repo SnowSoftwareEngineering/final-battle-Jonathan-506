@@ -6,6 +6,12 @@ namespace RPG_Battler.Gameplay
     {
         static void Main()
         {
+            Hero firstHero = new Hero();
+
+            firstHero.DisplayStats();
+            firstHero.AwakenHero();
+            firstHero.LevelUp();
+            Console.WriteLine(firstHero.CombatClass);
 
         }
     }
